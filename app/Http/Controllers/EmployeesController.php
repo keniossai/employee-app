@@ -33,4 +33,32 @@ class EmployeesController extends Controller
             Log::error($e);
         }
     }
+
+    public function updateEmployeeData(Request $request)
+    {
+        try
+        {
+            $employeeId     = $request->get('employeeId');
+            $employeeName   = $request->get('employeeName');
+            $employeeTask = $request->get('employeeTask');
+            $employeeDepartment = $request->get('employeeDepartment');
+
+            Employee::where('id', $employeeId)->update([
+                'employee_name'   =>  $employeeName,
+                'task' =>  $employeeTask,
+                'department' =>  $employeeDepartment
+            ]);
+
+            return response()->json([
+                'employee_name'   =>  $employeeName,
+                'task' =>  $employeeTask,
+                'department' =>  $employeeDepartment,
+            ]);
+        
+        }
+        catch(Exception $e)
+        {
+            Log::error($e);
+        }
+    }
 }
