@@ -8,9 +8,9 @@ Created App with Laravel application framework with expressive, elegant syntax.
 - [Added react components using the react laravel ui command](composer require ui react).
 - Break React components into smaller portions [resources/js/components]
 - Created Employee database and migrations, also added models and db:seeder.
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- I Created a client view for all employees and details of task [schema migrations](resources/js/components/task-list/Task.js).
+- [Created a action button where admin perform some function for the employees](resources/js/components/task-list/ActionButton.js).
+- [Admin can view assigned employee task and details of the task assign with a bootstrap modal](resources/js/components//task-list/modals/ViewModal.js).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
