@@ -15,7 +15,7 @@ class EmployeeFactory extends Factory
     {
         return [
             'employee_name' => $this->faker->name(),
-            'department' => $this->faker->department(),
+            'department' => $this->faker->word(),
             'task' => $this->faker->text(50),
         ];
     }

@@ -6,8 +6,8 @@ Created App with Laravel application framework with expressive, elegant syntax.
 
 - [Link to Github repo](https://github.com/keniossai/employee-app).
 - [Added react components using the react laravel ui command](composer require ui react).
-- Break React components into smaller portions [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Break React components into smaller portions [resources/js/components]
+- Created Employee database and migrations, also added models and db:seeder.
 - Database agnostic [schema migrations](https://laravel.com/docs/migrations).
 - [Robust background job processing](https://laravel.com/docs/queues).
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).

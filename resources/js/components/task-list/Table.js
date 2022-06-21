@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 class Table extends Component {
     constructor(props){
@@ -9,9 +10,18 @@ class Table extends Component {
         }
     }
 
-    // Get Employee List 
-    getEmployeeList = () => {
+    // Calling the function using a lifecycle method
+    componentDidMount(){
+        this.getEmployeeList()
+    }
 
+    // Get Employee List
+    getEmployeeList = () => {
+        axios.get('/get/employee/list').then(function(response){
+            this.setState({
+                employees: response.data
+            })
+        });
     }
     render(){
         return (
