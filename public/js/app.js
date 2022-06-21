@@ -5731,6 +5731,8 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -5742,14 +5744,45 @@ var UpdateModal = /*#__PURE__*/function (_Component) {
   var _super = _createSuper(UpdateModal);
 
   function UpdateModal(props) {
+    var _this;
+
     _classCallCheck(this, UpdateModal);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "inputEmployeeName", function (e) {
+      _this.setState({
+        employeeName: e.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "inputEmployeeTask", function (e) {
+      _this.setState({
+        employeeTask: e.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "inputEmployeeDepartment", function (e) {
+      _this.setState({
+        employeeDepartment: e.target.value
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "updateEmployeeData", function () {});
+
+    _this.state = {
+      employeeName: null,
+      employeeTask: null,
+      employeeDepartment: null
+    };
+    return _this;
   }
 
   _createClass(UpdateModal, [{
     key: "render",
     value: function render() {
+      var _this$state$employeeN, _this$state$employeeT, _this$state$employeeD;
+
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "modal fade",
         id: "updateModal" + this.props.modalId,
@@ -5773,30 +5806,79 @@ var UpdateModal = /*#__PURE__*/function (_Component) {
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
               className: "modal-body",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("form", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
                 action: "",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
                   className: "form-group",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
                     type: "text",
                     placeholder: "",
                     id: "employeeName",
-                    value: ""
+                    value: (_this$state$employeeN = this.state.employeeName) !== null && _this$state$employeeN !== void 0 ? _this$state$employeeN : "",
+                    onChange: this.inputEmployeeName
                   })
-                })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "form-group",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                    type: "text",
+                    placeholder: "",
+                    id: "employeeName",
+                    value: (_this$state$employeeT = this.state.employeeTask) !== null && _this$state$employeeT !== void 0 ? _this$state$employeeT : "",
+                    onChange: this.inputEmployeeTask
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "form-group",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                    type: "text",
+                    placeholder: "",
+                    id: "employeeName",
+                    value: (_this$state$employeeD = this.state.employeeDepartment) !== null && _this$state$employeeD !== void 0 ? _this$state$employeeD : "",
+                    onChange: this.inputEmployeeDepartment
+                  })
+                })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
               className: "modal-footer",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                className: "btn btn-info",
+                type: "submit",
+                id: "employeeName",
+                value: "Re-assign",
+                onClick: this.updateEmployeeData
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
                 type: "button",
                 className: "btn btn-secondary",
                 "data-bs-dismiss": "modal",
                 children: "Close"
-              })
+              })]
             })]
           })
         })
       });
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(props, current_state) {
+      var employeeUpdate = {
+        employeeName: null,
+        employeeDepartment: null,
+        employeeTask: null
+      }; // Update data from input
+      // update Data from props below
+
+      if (current_state.employeeName !== props.employeeData.currentEmployeeName) {
+        employeeUpdate.employeeName = props.employeeData.currentEmployeeName;
+      }
+
+      if (current_state.employeeDepartment !== props.employeeData.currentEmployeeDepartment) {
+        employeeUpdate.employeeDepartment = props.employeeData.currentEmployeeDepartment;
+      }
+
+      if (current_state.employeeTask !== props.employeeData.currentEmployeeTask) {
+        employeeUpdate.employeeTask = props.employeeData.currentEmployeeTask;
+      }
+
+      return employeeUpdate;
     }
   }]);
 

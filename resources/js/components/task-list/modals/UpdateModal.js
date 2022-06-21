@@ -4,6 +4,56 @@ import React, { Component } from "react";
 class UpdateModal extends Component {
     constructor(props) {
         super(props);
+
+        this.state ={
+            employeeName: null,
+            employeeTask: null,
+            employeeDepartment: null
+        }
+    }
+
+    inputEmployeeName = (e) => {
+        this.setState({
+            employeeName: e.target.value
+        })
+    }
+    inputEmployeeTask = (e) => {
+        this.setState({
+            employeeTask: e.target.value
+        })
+    }
+    inputEmployeeDepartment = (e) => {
+        this.setState({
+            employeeDepartment: e.target.value
+        })
+    }
+
+    static getDerivedStateFromProps(props, current_state){
+        let employeeUpdate = {
+            employeeName: null,
+            employeeDepartment: null,
+            employeeTask: null
+        }
+
+        // Update data from input
+
+
+        // update Data from props below
+
+        if(current_state.employeeName !== props.employeeData.currentEmployeeName){
+            employeeUpdate.employeeName = props.employeeData.currentEmployeeName;
+        }
+        if(current_state.employeeDepartment !== props.employeeData.currentEmployeeDepartment){
+            employeeUpdate.employeeDepartment = props.employeeData.currentEmployeeDepartment;
+        }
+        if(current_state.employeeTask !== props.employeeData.currentEmployeeTask){
+            employeeUpdate.employeeTask = props.employeeData.currentEmployeeTask;
+        }
+
+        return employeeUpdate;
+    }
+    updateEmployeeData = () => {
+
     }
 
     
@@ -33,11 +83,18 @@ class UpdateModal extends Component {
                         <div className="modal-body">
                            <form action="">
                             <div className="form-group">
-                                <input type="text" placeholder="" id="employeeName" value="" />
+                                <input type="text" placeholder="" id="employeeName" value={this.state.employeeName ?? ""} onChange={this.inputEmployeeName} />
+                            </div>
+                            <div className="form-group">
+                                <input type="text" placeholder="" id="employeeName" value={this.state.employeeTask ?? ""} onChange={this.inputEmployeeTask}/>
+                            </div>
+                            <div className="form-group">
+                                <input type="text" placeholder="" id="employeeName" value={this.state.employeeDepartment ?? ""} onChange={this.inputEmployeeDepartment}/>
                             </div>
                            </form>
                         </div>
                         <div className="modal-footer">
+                        <input className="btn btn-info" type="submit" id="employeeName" value="Re-assign" onClick={this.updateEmployeeData} />
                             <button
                                 type="button"
                                 className="btn btn-secondary"
