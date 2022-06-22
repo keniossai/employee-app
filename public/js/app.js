@@ -5448,7 +5448,7 @@ var ActionButton = /*#__PURE__*/function (_Component) {
           modalId: this.props.eachRowId,
           employeeData: this.state
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          className: "btn btn-info",
+          className: "btn btn-warning",
           type: "button",
           "data-bs-toggle": "modal",
           "data-bs-target": "#updateModal" + this.props.eachRowId,
@@ -5460,7 +5460,7 @@ var ActionButton = /*#__PURE__*/function (_Component) {
           modalId: this.props.eachRowId,
           employeeData: this.state
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          className: "btn btn-info",
+          className: "btn btn-danger",
           type: "button",
           "data-bs-toggle": "modal",
           "data-bs-target": "#deleteModal" + this.props.eachRowId,
@@ -5861,19 +5861,19 @@ var CreateModal = /*#__PURE__*/function (_Component) {
                     className: "form-group",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                       type: "text",
-                      id: "employeeTask",
+                      id: "employeeDepartment",
                       className: "form-control mb-3",
-                      placeholder: "Task Here",
-                      onChange: this.inputEmployeeTask
+                      placeholder: "Department Here",
+                      onChange: this.inputEmployeeDepartment
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                     className: "form-group",
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
                       type: "text",
-                      id: "employeeDepartment",
+                      id: "employeeTask",
                       className: "form-control mb-3",
-                      placeholder: "Department Here",
-                      onChange: this.inputEmployeeDepartment
+                      placeholder: "Task Here",
+                      onChange: this.inputEmployeeTask
                     })
                   })]
                 })

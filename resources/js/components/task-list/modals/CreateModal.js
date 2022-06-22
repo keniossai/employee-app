@@ -83,20 +83,22 @@ class CreateModal extends Component {
 
                                     <div className="form-group">
                                         <input type="text"
+                                            id="employeeDepartment"
+                                            className='form-control mb-3'
+                                            placeholder="Department Here"
+                                            onChange={this.inputEmployeeDepartment}
+                                        />
+                                    </div> 
+                                    
+                                    <div className="form-group">
+                                        <input type="text"
                                             id="employeeTask"
                                             className='form-control mb-3'
                                             placeholder="Task Here"
                                             onChange={this.inputEmployeeTask}
                                         />
                                     </div>  
-                                    <div className="form-group">
-                                        <input type="text"
-                                            id="employeeDepartment"
-                                            className='form-control mb-3'
-                                            placeholder="Department Here"
-                                            onChange={this.inputEmployeeDepartment}
-                                        />
-                                    </div>  
+                                     
                                 </form> 
                         </div>
                             <div className="modal-footer">

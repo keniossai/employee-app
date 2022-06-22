@@ -49,7 +49,7 @@ class ActionButton extends Component {
                     employeeData={this.state}
                 />
                 <button
-                    className="btn btn-info"
+                    className="btn btn-warning"
                     type="button"
                     data-bs-toggle="modal"
                     data-bs-target={"#updateModal" + this.props.eachRowId}
@@ -64,7 +64,7 @@ class ActionButton extends Component {
                     employeeData={this.state}
                 />
                 <button
-                    className="btn btn-info"
+                    className="btn btn-danger"
                     type="button"
                     data-bs-toggle="modal"
                     data-bs-target={"#deleteModal" + this.props.eachRowId}
