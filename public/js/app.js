@@ -5550,7 +5550,7 @@ var Table = /*#__PURE__*/function (_Component) {
     _defineProperty(_assertThisInitialized(_this), "getEmployeeList", function () {
       var self = _assertThisInitialized(_this);
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get('/get/employee/list').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default().get("/get/employee/list").then(function (response) {
         self.setState({
           employees: response.data
         });
