@@ -9,7 +9,7 @@ use App\Models\Employee;
 
 class EmployeesController extends Controller
 {
-    // Get employee list from database
+    // Get task list from database
     public function getEmployeeList(){
         try{
 
@@ -21,7 +21,7 @@ class EmployeesController extends Controller
         }
     }
 
-    // Get individual Emloyment details
+    // Get individual Task details
 
     public function getEmployeeDetails (Request $request){
         try{
@@ -55,6 +55,49 @@ class EmployeesController extends Controller
                 'department' =>  $employeeDepartment,
             ]);
         
+        }
+        catch(Exception $e)
+        {
+            Log::error($e);
+        }
+    }
+
+    // Deleting Task.
+
+    public function destroy(Employee $employee)
+    {
+        try
+        {
+            $employee->delete(); 
+        }
+        catch(Exception $e)
+        {
+            Log::error($e);
+        }
+    }
+
+
+    // Storing new task.
+
+    public function store(Request $request)
+    {
+        try
+        {
+            $employeeName = $request->get('employeeName');
+            $employeeTask = $request->get('employeeTask');
+            $employeeDepartment = $request->get('employeeDepartment');
+
+            Employee::create([
+                'employee_name'   =>  $employeeName,
+                'task'          =>  $employeeTask,
+                'department'          =>  $employeeDepartment
+            ]);
+
+            return response()->json([
+                'employee_name'   =>  $employeeName,
+                'task' =>  $employeeTask,
+                'department'          =>  $employeeDepartment
+            ]);
         }
         catch(Exception $e)
         {
