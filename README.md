@@ -15,4 +15,3 @@ Created App with Laravel application framework with, and created laravel scalfol
 - [Admin can view delete employee task and details of the task assign with a bootstrap modal](resources/js/components//task-list/modals/DeleteModal.js).
 - [Admin can view create employee task and details of the task assign with a bootstrap modal](resources/js/components//task-list/modals/CreateModal.js).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
